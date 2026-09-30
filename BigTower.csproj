@@ -16,8 +16,8 @@
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<PackageId>BigTower</PackageId>
 		<BepInExPluginGuid>com.yummi.dsp.bigtower</BepInExPluginGuid>
-		<Description>Logistics stations get 9 storage slots, kept after uninstall | 运输塔扩容到 9 格，卸载后依然保留</Description>
-		<Version>1.0.0</Version>
+		<Description>Logistics stations get 6 or 9 storage slots, kept after uninstall | 运输塔扩容到 6 或 9 格，卸载后依然保留</Description>
+		<Version>1.1.0</Version>
 		<Authors>cat-yummi</Authors>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>

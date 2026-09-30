@@ -1,7 +1,7 @@
 ﻿{
   "name": "BigTower",
-  "description": "Logistics stations get 9 storage slots, kept after uninstall | 运输塔扩容到 9 格，卸载后依然保留",
-  "version_number": "1.0.0",
+  "description": "Logistics stations get 6 or 9 storage slots, kept after uninstall | 运输塔扩容到 6 或 9 格，卸载后依然保留",
+  "version_number": "1.1.0",
   "website_url": "",
   "dependencies": [
     "xiaoye97-BepInEx-5.4.17"

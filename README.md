@@ -3,11 +3,11 @@
 <details>
 <summary>Read me in English</summary>
 
-***Logistics stations with 9 storage slots***
+***Logistics stations with 6 or 9 storage slots***
 
 ## Overview
 
-* Every Planetary Logistics Station and Interstellar Logistics Station gets **9 storage slots** (vanilla: 4 and 5).
+* Every Planetary Logistics Station and Interstellar Logistics Station gets **9 storage slots** by default, or **6** if you prefer (vanilla: 4 and 5).
   * Newly built stations are expanded right away.
   * Existing stations are expanded the first time you open their window.
 * The station window shows all slots at once. If the window gets taller than the screen, it is scaled down to fit.
@@ -21,18 +21,21 @@
 
 ## Config
 
-* `BepInEx/config/com.yummi.dsp.bigtower.cfg`
-  * `TargetSlots` (default `9`): number of slots after expansion.
-  * Lowering the value does not shrink stations that are already expanded.
+* `BepInEx/config/com.yummi.dsp.bigtower.cfg`, or the r2modman Config editor
+  * `TargetSlots`: `9` (default) or `6`.
+    * `6`: the safe choice. The vanilla game still fully supports all 6 slots after you uninstall this mod (see below).
+    * `9`: more slots, but only partly supported by the vanilla game after uninstalling.
+  * Switching from 9 to 6 does not shrink stations that already have 9 slots.
 
 ## Save compatibility
 
 * No extra save data is written. Expanded stations are stored in the vanilla save format, so **they stay expanded even after you uninstall this mod**.
-* After uninstalling, the vanilla game only partly supports the extra slots:
-  * The station window shows at most 6 slots; slots 7+ are hidden and can't be edited.
+* How the vanilla game handles the extra slots after uninstalling:
+  * The station window shows 6 slots; slots 7+ are hidden and can't be edited.
+  * Drones and vessels deliver into slots 1-6. Deliveries to slots 7+ **lose the items**, so clear the Demand settings on slots 7+ before uninstalling.
   * Belt input and sorters only fill slots 1-5.
-  * Drones and vessels delivering to slots 7+ **lose the items**. Clear the Demand settings on slots 7+ before uninstalling.
-  * Supply from the extra slots and belt output keep working.
+  * Supply from every slot and belt output keep working.
+* In short: with `TargetSlots = 6`, the only thing you lose after uninstalling is belt / sorter input into slot 6.
 
 ## Notes
 
@@ -50,11 +53,11 @@
 <details>
 <summary>中文说明</summary>
 
-***运输塔扩容到 9 格***
+***运输塔扩容到 6 或 9 格***
 
 ## 功能说明
 
-* 行星内物流运输站和星际物流运输站都扩容到 **9 格**（原版分别为 4 格和 5 格）。
+* 行星内物流运输站和星际物流运输站默认扩容到 **9 格**，也可以选 **6 格**（原版分别为 4 格和 5 格）。
   * 新建的运输塔建好即扩容。
   * 已有的运输塔在第一次打开窗口时扩容。
 * 运输塔窗口直接显示全部格子；窗口高过屏幕时会整体缩小。
@@ -68,18 +71,21 @@
 
 ## 配置
 
-* `BepInEx/config/com.yummi.dsp.bigtower.cfg`
-  * `TargetSlots`（默认 `9`）：扩容后的格子数。
-  * 调小该值不会缩减已经扩容的运输塔。
+* `BepInEx/config/com.yummi.dsp.bigtower.cfg`，或 r2modman 的 Config editor
+  * `TargetSlots`：`9`（默认）或 `6`。
+    * `6`：稳妥的选择，卸载本 mod 后原版仍能完整支持全部 6 格（见下文）。
+    * `9`：格子更多，但卸载后原版只能部分支持。
+  * 从 9 改成 6 不会缩减已经是 9 格的运输塔。
 
 ## 存档兼容
 
 * 不写入任何额外存档数据，扩容后的运输塔以原版存档格式保存，**卸载本 mod 后扩容依然保留**。
-* 卸载后原版对多出来的格子只有部分支持：
-  * 运输塔窗口最多显示 6 格，第 7 格起看不到也改不了。
+* 卸载后原版对多出来的格子的支持情况：
+  * 运输塔窗口显示 6 格，第 7 格起看不到也改不了。
+  * 无人机和运输船能往第 1~6 格送货；往第 7 格起送货时**货物会丢失**，卸载前请先清掉第 7 格起的需求设置。
   * 传送带输入和分拣器只往第 1~5 格放货。
-  * 无人机和运输船往第 7 格起送货时**货物会丢失**，卸载前请先清掉第 7 格起的需求设置。
-  * 从多出来的格子供货、传送带输出不受影响。
+  * 所有格子的供货、传送带输出不受影响。
+* 简单来说：`TargetSlots = 6` 时，卸载后唯一失去的只是传送带和分拣器往第 6 格放货。
 
 ## 注意事项
 

@@ -14,7 +14,7 @@ namespace BigTower
     {
         public const string PLUGIN_GUID = "com.yummi.dsp.bigtower";
         public const string PLUGIN_NAME = "大塔 (Big Tower)";
-        public const string PLUGIN_VERSION = "1.0.0";
+        public const string PLUGIN_VERSION = "1.1.0";
 
         private static readonly Harmony harmony = new Harmony(PLUGIN_GUID);
         internal static ManualLogSource Log;
@@ -22,7 +22,10 @@ namespace BigTower
         private void Awake()
         {
             Log = Logger;
-            ConfigEntry<int> targetSlots = Config.Bind("General", "TargetSlots", 9, "运输塔扩容后的格子数");
+            ConfigEntry<int> targetSlots = Config.Bind("General", "TargetSlots", 9, new ConfigDescription(
+                "Storage slots per station. 6: fully supported by vanilla after uninstalling (except belt/sorter input into slot 6). 9: more slots.\n" +
+                "运输塔格子数。6：卸载后原版仍完整支持（仅传送带/分拣器不往第 6 格放货）。9：格子更多。",
+                new AcceptableValueList<int>(9, 6)));
             StationExpandPatch.TargetSlots = targetSlots.Value;
 
             harmony.PatchAll(typeof(StationExpandPatch));

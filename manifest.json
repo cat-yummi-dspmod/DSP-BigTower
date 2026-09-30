@@ -1,0 +1,9 @@
+﻿{
+  "name": "BigTower",
+  "description": "Experiment: expand station storage slots | 实验：扩展运输塔格子数",
+  "version_number": "0.0.4",
+  "website_url": "",
+  "dependencies": [
+    "xiaoye97-BepInEx-5.4.22"
+  ]
+}

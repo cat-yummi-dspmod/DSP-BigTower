@@ -6,15 +6,15 @@ using HarmonyLib;
 namespace BigTower
 {
     /// <summary>
-    /// 实验：运输塔新建时、打开窗口时自动扩容到 TargetSlots 格，窗口直接显示全部格子。
-    /// 不改存档格式，用于验证卸载 mod 回到原版后扩容是否仍然保留。
+    /// 运输塔新建时、打开窗口时自动扩容到 TargetSlots 格，窗口直接显示全部格子。
+    /// 不改存档格式，卸载 mod 回到原版后扩容仍然保留。
     /// </summary>
     [BepInPlugin(PLUGIN_GUID, PLUGIN_NAME, PLUGIN_VERSION)]
     public class BigTower : BaseUnityPlugin
     {
         public const string PLUGIN_GUID = "com.yummi.dsp.bigtower";
-        public const string PLUGIN_NAME = "大塔实验 (Big Tower Experiment)";
-        public const string PLUGIN_VERSION = "0.0.4";
+        public const string PLUGIN_NAME = "大塔 (Big Tower)";
+        public const string PLUGIN_VERSION = "1.0.0";
 
         private static readonly Harmony harmony = new Harmony(PLUGIN_GUID);
         internal static ManualLogSource Log;

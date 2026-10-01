@@ -7,7 +7,8 @@
 
 ## Overview
 
-* **max** (default): Planetary Logistics Stations get **8** slots, Interstellar Logistics Stations get **9** (vanilla: 4 and 5). Planetary stations are capped at 8 to avoid conflicts with vanilla logic at 9 slots.
+* Vanilla: Planetary Logistics Stations get **4** slots, Interstellar Logistics Stations get **5**.
+* **max** (default): Planetary Logistics Stations get **8** slots, Interstellar Logistics Stations get **9**. Planetary stations are capped at 8 to avoid conflicts with vanilla logic at 9 slots.
 * **safe**: Every station gets **6** slots.
 * New stations expand on build; existing ones expand the first time you open their window.
 * The station window shows all slots; if it is taller than the screen, it scales down.
@@ -49,7 +50,8 @@
 
 ## 功能说明
 
-* **max**（默认）：行星内物流运输站 **8 格**，星际物流运输站 **9 格**（原版分别为 4 格和 5 格）。行星内限制为 8 格，避免 9 格与原版逻辑冲突报错。
+* 原版情况下，行星内物流运输站 **4** 格、星际物流运输站 **5** 格。
+* **max**（默认）：行星内物流运输站 **8 格**，星际物流运输站 **9 格**。行星内限制为 8 格，避免 9 格与原版逻辑冲突报错。
 * **safe**：所有运输站统一 **6 格**。
 * 新建即扩容；已有运输塔在首次打开窗口时扩容。
 * 窗口显示全部格子；过高时整体缩小。

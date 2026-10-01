@@ -15,7 +15,7 @@ namespace BigTower
     {
         public const string PLUGIN_GUID = "com.yummi.dsp.bigtower";
         public const string PLUGIN_NAME = "大塔 (Big Tower)";
-        public const string PLUGIN_VERSION = "1.2";
+        public const string PLUGIN_VERSION = "1.2.0";
 
         private static readonly Harmony harmony = new Harmony(PLUGIN_GUID);
         internal static ManualLogSource Log;

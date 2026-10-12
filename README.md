@@ -14,6 +14,7 @@
 * The station window shows all slots; if it is taller than the screen, it scales down.
 * Extra slots support drones, vessels, belts, sorters, sandbox keep-amount, and copy/paste like vanilla slots.
 * Works well with TowerFactory.
+* Incompatible with **LogisticsStationSlots** — if both are installed, BigTower disables itself and shows an error.
 
 ## Config
 
@@ -29,7 +30,7 @@
 ## Notes
 
 * Orbital Collectors and Advanced Mining Machines are not expanded.
-* Control Panel station view still shows only 6 slots.
+* Control Panel station view pages with the mouse wheel when a station has more than 6 slots (Page Up/Down also work).
 * Multiplayer is untested.
 
 ## CREDITS
@@ -57,6 +58,7 @@
 * 窗口显示全部格子；过高时整体缩小。
 * 扩出来的格子支持无人机、运输船、传送带、分拣器、沙盒保持数量、复制粘贴等。
 * 可与塔厂（TowerFactory）配合使用。
+* 与 **LogisticsStationSlots** 不兼容；若同时安装，BigTower 会停用并弹窗提示。
 
 ## 配置
 
@@ -72,7 +74,7 @@
 ## 注意事项
 
 * 轨道采集器和大型采矿机不扩容。
-* 总控面板仍只显示前 6 格。
+* 总控面板在储物栏区域滚轮翻页可查看第 7 格及以后（也可用 Page Up/Down）。
 * 未在多人游戏中测试。
 
 ## 鸣谢

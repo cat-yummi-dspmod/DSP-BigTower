@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.2
+
+- Thunderstore / BepInEx title and description wording (English first, then Chinese).
+
+## 1.2.1
+
+- **Control panel**: mouse wheel / Page Up–Down paging for extra station slots in the Total Control Panel (vanilla shows only 6).
+- **Incompatible with LogisticsStationSlots**: if both are installed, BigTower disables itself, logs an error, and shows a message on the main menu.
+- Thunderstore / BepInEx display name and description (English first, then Chinese).
+
 ## 1.2.0
 
 - **ExpansionMode** replaces `TargetSlots`: `max` (default) or `safe`.
@@ -20,6 +30,16 @@
 ---
 
 # 更新日志
+
+## 1.2.2
+
+- Thunderstore / BepInEx 标题与描述文案（英文在前、中文在后）。
+
+## 1.2.1
+
+- **总控面板**：储物栏滚轮 / Page Up–Down 翻页，可查看第 7 格及以后（原版只显示 6 格）。
+- **与 LogisticsStationSlots 不兼容**：同时安装时 BigTower 自动停用，写 Error 日志并在主菜单弹窗提示。
+- Thunderstore / BepInEx 显示名称与描述：英文在前、中文在后。
 
 ## 1.2.0
 

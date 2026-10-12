@@ -1,7 +1,7 @@
 ﻿{
   "name": "BigTower",
-  "description": "More station slots (max: 8/9, safe: 6), kept after uninstall | 运输塔扩容（max 8/9，safe 6），卸载后保留",
-  "version_number": "1.2.0",
+  "description": "More station slots (max 8/9, safe 6), kept after uninstall. | 运输塔扩容（max 8/9，safe 6），卸载mod后依旧保留6格",
+  "version_number": "1.2.2",
   "website_url": "https://github.com/cat-yummi/DSP-BigTower",
   "dependencies": [
     "xiaoye97-BepInEx-5.4.17"

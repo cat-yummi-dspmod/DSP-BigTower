@@ -16,8 +16,8 @@
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<PackageId>BigTower</PackageId>
 		<BepInExPluginGuid>com.yummi.dsp.bigtower</BepInExPluginGuid>
-		<Description>More station slots (max: 8/9, safe: 6), kept after uninstall | 运输塔扩容（max 8/9，safe 6），卸载后保留</Description>
-		<Version>1.2.0</Version>
+		<Description>More station slots (max 8/9, safe 6), kept after uninstall. | 运输塔扩容（max 8/9，safe 6），卸载mod后依旧保留6格</Description>
+		<Version>1.2.2</Version>
 		<Authors>cat-yummi</Authors>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>

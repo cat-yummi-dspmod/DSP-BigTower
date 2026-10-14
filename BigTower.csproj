@@ -17,7 +17,7 @@
 		<PackageId>BigTower</PackageId>
 		<BepInExPluginGuid>com.yummi.dsp.bigtower</BepInExPluginGuid>
 		<Description>More station slots (max 8/9, safe 6), kept after uninstall. | 运输塔扩容（max 8/9，safe 6），卸载mod后依旧保留6格</Description>
-		<Version>1.2.2</Version>
+		<Version>1.2.3</Version>
 		<Authors>cat-yummi</Authors>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
@@ -33,6 +33,8 @@
 		<PackageReference Include="BepInEx.PluginInfoProps" Version="1.0.0" />
 		<PackageReference Include="UnityEngine.Modules" Version="2022.3.53" IncludeAssets="compile" />
 		<PackageReference Include="DysonSphereProgram.GameLibs" Version="*-*" />
+		<!-- 安全注入前置 mod：补丁只在目标方法与原版一致时应用 -->
+		<ProjectReference Include="..\YummiHarness\plugin\YummiHarness.csproj" Private="false" />
 	</ItemGroup>
 	<PropertyGroup>
 		<ProfileDir Condition=" '$(ProfileDir)' == '' ">$(APPDATA)\r2modmanPlus-local\DysonSphereProgram\profiles\Default</ProfileDir>

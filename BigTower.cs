@@ -11,25 +11,38 @@ namespace BigTower
     /// 不改存档格式，卸载 mod 回到原版后扩容仍然保留。
     /// </summary>
     [BepInPlugin(PLUGIN_GUID, PLUGIN_NAME, PLUGIN_VERSION)]
-    [BepInIncompatibility(LogisticsStationSlotsConflict.LogisticsStationSlotsGuid)]
+    [BepInDependency(YummiHarness.HarnessPlugin.PluginGuid)]
+    [BepInDependency(LogisticsStationSlotsConflict.LogisticsStationSlotsGuid, BepInDependency.DependencyFlags.SoftDependency)]
     public class BigTower : BaseUnityPlugin
     {
         public const string PLUGIN_GUID = "com.yummi.dsp.bigtower";
         public const string PLUGIN_NAME =
             "More station slots (max 8/9, safe 6), kept after uninstall. | 运输塔扩容（max 8/9，safe 6），卸载mod后依旧保留6格";
-        public const string PLUGIN_VERSION = "1.2.2";
+        public const string PLUGIN_VERSION = "1.2.3";
 
         private static readonly Harmony harmony = new Harmony(PLUGIN_GUID);
+        private static readonly YummiHarness.PatchOptions HarnessOptions = new YummiHarness.PatchOptions { ModName = "BigTower" };
         internal static ManualLogSource Log;
+        internal static BigTower Instance { get; private set; }
 
         private void Awake()
         {
+            Instance = this;
             Log = Logger;
+            Log.LogInfo($"{PLUGIN_NAME} v{PLUGIN_VERSION} 等待主菜单就绪后再启用（若与 LogisticsStationSlots 共存将弹窗并停用）");
+            MainMenuBootstrap.Init(this);
+            ConflictStartup.BeginScan(this);
+            // 互斥 mod 登记到 YummiHarness，与 patch 失败等问题在主菜单合并成一个弹窗
+            YummiHarness.Harness.RegisterConflict("BigTower", LogisticsStationSlotsConflict.LogisticsStationSlotsGuid,
+                "LogisticsStationSlots");
+            YummiHarness.Harness.PatchAll(harmony, typeof(MainMenuBootstrap), HarnessOptions);
+        }
+
+        internal void ApplyPatchesAndConfig()
+        {
             if (LogisticsStationSlotsConflict.IsPresent())
             {
-                Logger.LogError(LogisticsStationSlotsConflict.ErrorLog);
-                LogisticsStationSlotsConflict.RegisterMainMenuWarning(harmony);
-                enabled = false;
+                Log.LogError(LogisticsStationSlotsConflict.GetErrorMessage());
                 return;
             }
 
@@ -39,11 +52,12 @@ namespace BigTower
                 new AcceptableValueList<string>("max", "safe")));
             StationExpandPatch.UseSafeMode = expansionMode.Value.Equals("safe", StringComparison.OrdinalIgnoreCase);
 
-            harmony.PatchAll(typeof(StationExpandPatch));
-            harmony.PatchAll(typeof(StationWindowPatch));
-            harmony.PatchAll(typeof(StationLogicPatch));
-            harmony.PatchAll(typeof(ControlPanelStoragePaging));
-            harmony.PatchAll(typeof(ControlPanelWheelZoomGuard));
+            // 每个补丁单独校验目标方法是否与原版一致；失败的只跳过自己，其余功能照常
+            YummiHarness.Harness.PatchAll(harmony, typeof(StationExpandPatch), HarnessOptions);
+            YummiHarness.Harness.PatchAll(harmony, typeof(StationWindowPatch), HarnessOptions);
+            YummiHarness.Harness.PatchAll(harmony, typeof(StationLogicPatch), HarnessOptions);
+            YummiHarness.Harness.PatchAll(harmony, typeof(ControlPanelStoragePaging), HarnessOptions);
+            YummiHarness.Harness.PatchAll(harmony, typeof(ControlPanelWheelZoomGuard), HarnessOptions);
 
             Log.LogInfo($"{PLUGIN_NAME} v{PLUGIN_VERSION} 已加载 (ExpansionMode={expansionMode.Value})");
         }

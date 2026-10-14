@@ -87,6 +87,7 @@ namespace BigTower
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(UIControlPanelStationStorage), nameof(UIControlPanelStationStorage.SetData))]
+        [YummiHarness.Guard("61111e7e94b232ee")]
         public static void SetData_Prefix(StationComponent _station, ref int _index)
         {
             if (_station == null)
@@ -111,6 +112,7 @@ namespace BigTower
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(UIControlPanelStationInspector), "_OnUpdate")]
+        [YummiHarness.Guard("b89aade680ae7db9")]
         public static void OnUpdate_Postfix(UIControlPanelStationInspector __instance)
         {
             UIControlPanelStationStorage[] uis = storageUIsRef(__instance);

@@ -42,6 +42,10 @@
 
 * cat yummi
 
+## BTW
+* I only can speak 3 languages, and lack of time. If you want more localizon, please git for a pull request.
+* https://github.com/cat-yummi-dspmod/DSP-BigTower.git
+
 </details>
 
 <details>

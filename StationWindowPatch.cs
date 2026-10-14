@@ -19,6 +19,7 @@ namespace BigTower
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(UIStationWindow), "OnStationIdChange")]
+        [YummiHarness.Guard("a94c837d579532f7")]
         public static void OnStationIdChange_Prefix(UIStationWindow __instance)
         {
             if (!__instance.active || __instance.transport == null || __instance.stationId <= 0)
@@ -36,6 +37,7 @@ namespace BigTower
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(UIStationWindow), "OnStationIdChange")]
+        [YummiHarness.Guard("a94c837d579532f7")]
         public static void OnStationIdChange_Postfix(UIStationWindow __instance)
         {
             FitToScreen(__instance);
@@ -43,6 +45,7 @@ namespace BigTower
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(UIStationWindow), "RefreshTrans")]
+        [YummiHarness.Guard("5d8291ee6f5744c2")]
         public static void RefreshTrans_Postfix(UIStationWindow __instance)
         {
             FitToScreen(__instance);

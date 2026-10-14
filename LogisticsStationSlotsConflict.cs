@@ -1,16 +1,13 @@
 using System;
-using BepInEx;
 using BepInEx.Bootstrap;
-using HarmonyLib;
 
 namespace BigTower
 {
-    /// <summary>
-    /// 与 LogisticsStationSlots 功能重叠且易双重补丁，二者不可同时启用。
-    /// </summary>
     internal static class LogisticsStationSlotsConflict
     {
         internal const string LogisticsStationSlotsGuid = "local.logisticsstationslots";
+
+        private static bool messageShown;
 
         internal static bool IsPresent()
         {
@@ -37,29 +34,25 @@ namespace BigTower
             return false;
         }
 
-        internal const string ErrorLog =
-            "LogisticsStationSlots and BigTower are incompatible. BigTower has been disabled; uninstall one of them.\n\n" +
-            "LogisticsStationSlots 与 BigTower 存在明确的不兼容。BigTower 已停用，请卸载其中一个 mod。";
-
-        internal static void RegisterMainMenuWarning(Harmony harmony)
+        internal static string GetErrorMessage()
         {
-            harmony.Patch(
-                AccessTools.Method(typeof(VFPreload), nameof(VFPreload.InvokeOnLoadWorkEnded)),
-                postfix: new HarmonyMethod(typeof(LogisticsStationSlotsConflict), nameof(OnMainMenuOpen)));
+            string label = $"BigTower {BigTower.PLUGIN_VERSION} | 运输塔扩容 {BigTower.PLUGIN_VERSION}";
+            return
+                $"Could not load [{label}] because it is incompatible with LogisticsStationSlots ({LogisticsStationSlotsGuid}). BigTower has been disabled; uninstall one of them.\n\n" +
+                $"无法加载 [{label}]，因其与 LogisticsStationSlots（{LogisticsStationSlotsGuid}）不兼容。BigTower 已停用，请卸载其中一个 mod。";
         }
 
-        private static bool messageShown;
-
-        public static void OnMainMenuOpen()
+        internal static void ShowConflictDialog()
         {
             if (messageShown)
             {
                 return;
             }
             messageShown = true;
+            BigTower.Log?.LogError(GetErrorMessage());
             UIMessageBox.Show(
-                "BigTower",
-                ErrorLog,
+                "BigTower | 运输塔扩容",
+                GetErrorMessage(),
                 "确定".Translate(),
                 UIMessageBox.ERROR);
         }

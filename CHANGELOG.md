@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.3
+
+- LogisticsStationSlots conflict: bilingual load-blocked message in log and main-menu dialog (no BepInEx-only English incompatibility error).
+- Main-menu dialog on conflict after preload splash (VFPreload + UIRoot menu); soft-dependency on LogisticsStationSlots for load order; patches deferred until main menu.
+
 ## 1.2.2
 
 - Thunderstore / BepInEx title and description wording (English first, then Chinese).
@@ -30,6 +35,11 @@
 ---
 
 # 更新日志
+
+## 1.2.3
+
+- 与 LogisticsStationSlots 冲突时，日志与主菜单弹窗使用中英双语说明（不再依赖 BepInEx 仅英文的不兼容报错）。
+- 闪屏/主菜单就绪后再检测互斥并弹窗；对 LogisticsStationSlots 设 SoftDependency；补丁延后启用。
 
 ## 1.2.2
 

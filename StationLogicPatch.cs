@@ -33,6 +33,7 @@ namespace BigTower
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(StationComponent), nameof(StationComponent.UpdateNeeds))]
+        [YummiHarness.Guard("87833a246c679fc8")]
         public static void UpdateNeeds_Postfix(StationComponent __instance)
         {
             StationStore[] storage = __instance.storage;
@@ -81,6 +82,7 @@ namespace BigTower
 
         [HarmonyPrefix]
         [HarmonyPatch(typeof(StationComponent), nameof(StationComponent.UpdateInputSlots))]
+        [YummiHarness.Guard("0f49824d6f59bbd9")]
         public static void UpdateInputSlots_Prefix(StationComponent __instance, out long __state)
         {
             __state = 0L;
@@ -100,6 +102,7 @@ namespace BigTower
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(StationComponent), nameof(StationComponent.UpdateInputSlots))]
+        [YummiHarness.Guard("0f49824d6f59bbd9")]
         public static void UpdateInputSlots_Postfix(StationComponent __instance, CargoTraffic traffic, long __state)
         {
             if (__state == 0L)
@@ -148,6 +151,7 @@ namespace BigTower
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom),
             new[] { typeof(int), typeof(int), typeof(int), typeof(int[]), typeof(byte), typeof(byte) },
             new[] { ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Out })]
+        [YummiHarness.Guard("c5ca122186e845f3")]
         public static void PickFrom_Entity_Postfix(PlanetFactory __instance, ref int __result, int entityId, int offset, int filter, int[] needs, ref byte stack, ref byte inc)
         {
             if (__result != 0 || needs == null || needs.Length <= VanillaNeedsLength)
@@ -173,6 +177,7 @@ namespace BigTower
         [HarmonyPatch(typeof(PlanetFactory), nameof(PlanetFactory.PickFrom),
             new[] { typeof(uint), typeof(int), typeof(int), typeof(int[]), typeof(byte), typeof(byte) },
             new[] { ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Out, ArgumentType.Out })]
+        [YummiHarness.Guard("fc3da46f7f47bcc2")]
         public static void PickFrom_Typed_Postfix(PlanetFactory __instance, ref int __result, uint ioTargetTypedId, int offset, int filter, int[] needs, ref byte stack, ref byte inc)
         {
             if (__result != 0 || needs == null || needs.Length <= VanillaNeedsLength)
@@ -196,6 +201,7 @@ namespace BigTower
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(StationComponent), nameof(StationComponent.AddItem))]
+        [YummiHarness.Guard("806f415ada529868")]
         public static void AddItem_Postfix(StationComponent __instance, ref int __result, int itemId, int count, int inc)
         {
             const int vanillaSlots = 6;
@@ -221,6 +227,7 @@ namespace BigTower
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(StationComponent), nameof(StationComponent.UpdateKeepMode))]
+        [YummiHarness.Guard("368147d80661e649")]
         public static void UpdateKeepMode_Postfix(StationComponent __instance)
         {
             const int vanillaSlots = 5;

@@ -18,7 +18,7 @@ namespace BigTower
         public const string PLUGIN_GUID = "com.yummi.dsp.bigtower";
         public const string PLUGIN_NAME =
             "More station slots (max 8/9, safe 6), kept after uninstall. | 运输塔扩容（max 8/9，safe 6），卸载mod后依旧保留6格";
-        public const string PLUGIN_VERSION = "1.2.3";
+        public const string PLUGIN_VERSION = "1.3.0";
 
         private static readonly Harmony harmony = new Harmony(PLUGIN_GUID);
         private static readonly YummiHarness.PatchOptions HarnessOptions = new YummiHarness.PatchOptions { ModName = "BigTower" };

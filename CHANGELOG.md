@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0
+
+- **YummiHarness**: patches use `Harness.PatchAll` with `[Guard]` IL fingerprints; partial failures skip only that patch; conflicts and shared hooks reported via YummiHarness main-menu dialog.
+- Thunderstore dependency: `cat_yummi-YummiHarness`.
+
 ## 1.2.3
 
 - LogisticsStationSlots conflict: bilingual load-blocked message in log and main-menu dialog (no BepInEx-only English incompatibility error).
@@ -35,6 +40,11 @@
 ---
 
 # 更新日志
+
+## 1.3.0
+
+- **YummiHarness**：补丁经 `Harness.PatchAll` + `[Guard]` 指纹校验；单点失败不影响其余功能；互斥与同函数多 mod 由 YummiHarness 主菜单统一提示。
+- Thunderstore 依赖：`cat_yummi-YummiHarness`。
 
 ## 1.2.3
 

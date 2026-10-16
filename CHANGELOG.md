@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0
+
+- BigTower is now a compatibility shim. It depends on Station Assistant and treats planetary stations as 8 slots and interstellar stations as 9, with station-panel paging on and control-panel paging off. It does not write Station Assistant's config.
+
 ## 1.3.0
 
 - **YummiHarness**: patches use `Harness.PatchAll` with `[Guard]` IL fingerprints; partial failures skip only that patch; conflicts and shared hooks reported via YummiHarness main-menu dialog.

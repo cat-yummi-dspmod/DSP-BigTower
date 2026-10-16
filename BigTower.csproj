@@ -16,8 +16,8 @@
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<PackageId>BigTower</PackageId>
 		<BepInExPluginGuid>com.yummi.dsp.bigtower</BepInExPluginGuid>
-		<Description>More station slots (max 8/9, safe 6), kept after uninstall. | 运输塔扩容（max 8/9，safe 6），卸载mod后依旧保留6格</Description>
-		<Version>1.3.0</Version>
+		<Description>Compatibility shim for Station Assistant. Treats planetary stations as 8 slots and interstellar stations as 9.</Description>
+		<Version>1.4.0</Version>
 		<Authors>cat-yummi</Authors>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
@@ -35,6 +35,17 @@
 		<PackageReference Include="DysonSphereProgram.GameLibs" Version="*-*" />
 		<!-- 安全注入前置 mod：补丁只在目标方法与原版一致时应用 -->
 		<ProjectReference Include="..\YummiHarness\plugin\YummiHarness.csproj" Private="false" />
+		<ProjectReference Include="..\StationAssistant\StationAssistant.csproj" Private="false" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Remove="StationExpandPatch.cs" />
+		<Compile Remove="StationLogicPatch.cs" />
+		<Compile Remove="StationWindowPatch.cs" />
+		<Compile Remove="ControlPanelStoragePaging.cs" />
+		<Compile Remove="ControlPanelWheelZoomGuard.cs" />
+		<Compile Remove="MainMenuBootstrap.cs" />
+		<Compile Remove="ConflictStartup.cs" />
+		<Compile Remove="LogisticsStationSlotsConflict.cs" />
 	</ItemGroup>
 	<PropertyGroup>
 		<ProfileDir Condition=" '$(ProfileDir)' == '' ">$(APPDATA)\r2modmanPlus-local\DysonSphereProgram\profiles\Default</ProfileDir>

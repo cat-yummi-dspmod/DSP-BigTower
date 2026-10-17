@@ -1,11 +1,11 @@
 {
   "name": "BigTower",
-  "description": "未完成测试的 mod",
-  "version_number": "1.4.0",
+  "description": "Treat shim: planetary 8 / interstellar 9 slots via Station Assistant. 行星8格、星际9格预设。",
+  "version_number": "1.4.3",
   "website_url": "https://github.com/cat-yummi-dspmod/DSP-BigTower",
   "dependencies": [
     "xiaoye97-BepInEx-5.4.17",
-    "cat_yummi-YummiHarness-0.2.0",
-    "cat_yummi-StationAssistant-0.1.0"
+    "cat_yummi-YummiHarness-0.2.3",
+    "cat_yummi-StationAssistant-0.1.3"
   ]
 }

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.1
+
+- Wipes legacy `com.yummi.dsp.bigtower.cfg` on first run (schema 1); no local keys besides `[_ConfigSchema]`.
+- Treat: expand on build/open; manual slot button off; control-panel scroll off.
+
 ## 1.4.0
 
 - BigTower is now a compatibility shim. It depends on Station Assistant and treats planetary stations as 8 slots and interstellar stations as 9, with station-panel paging on and control-panel paging off. It does not write Station Assistant's config.

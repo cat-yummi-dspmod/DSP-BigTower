@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
@@ -17,7 +17,7 @@
 		<PackageId>BigTower</PackageId>
 		<BepInExPluginGuid>com.yummi.dsp.bigtower</BepInExPluginGuid>
 		<Description>Compatibility shim for Station Assistant. Treats planetary stations as 8 slots and interstellar stations as 9.</Description>
-		<Version>1.4.0</Version>
+		<Version>1.4.3</Version>
 		<Authors>cat-yummi</Authors>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>

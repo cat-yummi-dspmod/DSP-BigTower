@@ -17,7 +17,7 @@
 		<PackageId>BigTower</PackageId>
 		<BepInExPluginGuid>com.yummi.dsp.bigtower</BepInExPluginGuid>
 		<Description>Compatibility shim for Station Assistant. Treats planetary stations as 8 slots and interstellar stations as 9.</Description>
-		<Version>1.4.3</Version>
+		<Version>2.0.0</Version>
 		<Authors>cat-yummi</Authors>
 		<LangVersion>latest</LangVersion>
 	</PropertyGroup>
@@ -48,7 +48,7 @@
 		<Compile Remove="LogisticsStationSlotsConflict.cs" />
 	</ItemGroup>
 	<PropertyGroup>
-		<ProfileDir Condition=" '$(ProfileDir)' == '' ">$(APPDATA)\r2modmanPlus-local\DysonSphereProgram\profiles\Default</ProfileDir>
+		<ProfileDir Condition=" '$(ProfileDir)' == '' ">$(APPDATA)\r2modmanPlus-local\DysonSphereProgram\profiles\YummiHarness</ProfileDir>
 		<DeployDir>$(ProfileDir)\BepInEx\plugins\cat_yummi-$(AssemblyName)</DeployDir>
 	</PropertyGroup>
 	<!-- 游戏运行时 dll 被占用会复制失败，只报警告不让编译失败 -->

@@ -1,9 +1,11 @@
 # BigTower
 
-兼容壳。增加物流塔容量，至原版不报错最大容量。
+Requires [Station Assistant](https://github.com/cat-yummi-dspmod/DSP-StationAssistant). At runtime it applies the **8 / 9 slot** preset (planetary / interstellar), expands on build and open, shows all rows on the tower window, and hides the manual slot button. Does not edit Station Assistant’s config file.
 
-安装后会要求 [Station Assistant](https://github.com/cat-yummi-dspmod/DSP-StationAssistant) 在运行时把行星物流塔当作 8 格、星际物流塔当作 9 格，**物流塔面板一次显示全部槽位**（不翻页），总控面板不翻页，并关掉「设置槽位数目」。不改 Station Assistant 的配置文件。卸掉 Station Assistant 后，格子依旧保留，但玩家看不到6格以后的格子，并且他们会成为物资黑洞。
+Do not use with **SafeBigTower**.
 
-Compatibility shim. It does not edit stations itself. While installed, it asks Station Assistant to treat planetary stations as 8 slots and interstellar stations as 9, with **all slot rows visible** on the tower window (no station paging), no control-panel paging, and the manual slot button off. Station Assistant's config file is left unchanged.
+---
 
-**Do not use together with SafeBigTower** (6/6 vanilla preset). 与 **SafeBigTower** 互斥。
+需要 [Station Assistant](https://github.com/cat-yummi-dspmod/DSP-StationAssistant)。运行时套用 **8 / 9 格**预设（行星 / 星际），建造与打开时扩容，塔面板显示全部槽位，并关闭手动改槽位按钮。不改 Station Assistant 的配置文件。
+
+勿与 **SafeBigTower** 同时使用。

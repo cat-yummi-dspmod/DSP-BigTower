@@ -1,11 +1,11 @@
 {
   "name": "BigTower",
-  "description": "Treat shim: planetary 8 / interstellar 9 slots via Station Assistant. 行星8格、星际9格预设。",
-  "version_number": "1.4.3",
+  "description": "Set station slots to 8/9. This is the maximum capacity that vanilla can reach without exploding. | 将塔容量设置为8/9。这是原版不爆红的最大容量。",
+  "version_number": "2.0.0",
   "website_url": "https://github.com/cat-yummi-dspmod/DSP-BigTower",
   "dependencies": [
     "xiaoye97-BepInEx-5.4.17",
     "cat_yummi-YummiHarness-0.2.3",
-    "cat_yummi-StationAssistant-0.1.3"
+    "cat_yummi-StationAssistant-0.1.7"
   ]
 }
